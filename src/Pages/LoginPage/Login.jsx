@@ -1,6 +1,5 @@
 import React, { useContext, useState } from "react";
 import { Helmet } from "react-helmet";
-import GoogleLogin from "react-google-login";
 import Logout from "../LogoutPage/Logout";
 import "./Login.css";
 import { MyContext } from "../../context/Mycontext";
