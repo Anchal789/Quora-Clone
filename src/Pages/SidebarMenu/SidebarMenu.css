@@ -1,0 +1,54 @@
+.sibebarMenu {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    /* position: absolute; */
+}
+
+.MuiButtonBase-root {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+
+    &:hover {
+        background-color: rgb(231, 230, 230);
+        border-radius: 5px;
+    }
+}
+
+.MuiSvgIcon-root {
+    color: gray;
+}
+
+.MuiButtonBase-root p {
+    font-size: 0.8rem;
+    color: gray;
+    text-transform: capitalize;
+}
+
+.menuOption {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    cursor: pointer;
+
+    &:hover {
+        background-color: rgb(231, 230, 230);
+        border-radius: 5px;
+    }
+}
+
+.menuOption img {
+    height: 25px;
+    width: 25px;
+    border-radius: 5px;
+    object-fit: cover;
+    margin-left: 10px;
+}
+
+.menuOption p {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: gray;
+    margin-left: 10px;
+}

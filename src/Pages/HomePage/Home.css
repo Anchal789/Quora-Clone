@@ -1,0 +1,25 @@
+*,
+:after,
+:before {
+    border: none;
+    box-sizing: border-box;
+    font-family: Poppins, sans-serif;
+    margin: 0;
+    outline: 0;
+    padding: 0;
+    text-decoration: none;
+    
+}
+body{
+    background-color: rgb(241, 241, 241);
+
+}
+
+.quora .quora_content {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 10px;
+    position: relative;
+    background-color: rgb(241, 241, 241);
+    margin: auto;
+}

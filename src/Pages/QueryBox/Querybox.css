@@ -1,0 +1,54 @@
+.queryBox {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  border: 1px solid lightgray;
+  background-color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 20px;
+
+  &:hover {
+    border: 1x solid gray;
+  }
+}
+
+@media screen and (max-width : 867px) {
+  .queryBox {
+    width: 100%;
+    margin: 10px;
+  }
+}
+
+@media screen and (max-width : 575px) {
+  .queryBox {
+    display: none;
+    /* margin: 10px;
+    width: 100%; */
+  }
+}
+
+.queryBox_info {
+  display: flex;
+  align-items: center;
+}
+
+.queryBox_info h5 {
+  color: rgb(82, 82, 82);
+  font-weight: 300;
+  margin-left: 10px;
+}
+
+.queryBox_quora {
+  display: flex;
+  margin-top: 8px;
+}
+
+.queryBox_quora input {
+  color: gray;
+  font-weight: bold;
+  width: 100%;
+  font-size: medium;
+}

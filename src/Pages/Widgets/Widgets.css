@@ -1,0 +1,35 @@
+.widget {
+    /* flex: 2; */
+    margin-top: 10px;
+    margin-right: 200px;
+    height: fit-content;
+    padding: 10px;
+    background-color: #fff;
+    margin-left: 10px;
+}
+
+.widget_header {
+    padding: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.widget_header h4 {
+    font-size: 1.1rem;
+    font-weight: bolder;
+    color: rgb(104, 104, 104);
+}
+
+@media only screen and (max-width: 1189px) {
+    .widget {
+        margin-right: 0px;
+        width: 337px;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .widget {
+        display: none;
+    }
+}

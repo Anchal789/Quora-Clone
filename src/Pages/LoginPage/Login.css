@@ -1,0 +1,343 @@
+/* * {
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    font-size: 1rem;
+}
+
+#container {
+    box-sizing: border-box;
+    background-image: url(//qsf.fs.quoracdn.net/-4-ans_frontend_assets.images.home_page_bg_desktop.png-26-4770753d59b970e1.png);
+    width: 100%;
+    position: absolute;
+    min-height: 100%;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#logo {
+    width: 30%;
+    height: 30%;
+}
+
+
+.header{
+    text-align: center;
+}
+
+.mainContainer {
+    position: absolute;
+    background-color: white;
+    margin: auto;
+    border: 1px solid #dee0e1;
+}
+
+.content{
+    display: flex;
+}
+
+.left{
+    width: 50%;
+    padding: 20px;
+    text-align: center;
+}
+
+.left button{
+    color: black;
+}
+
+.right{
+    width: 50%;
+    padding: 3%;
+    box-sizing: border-box;
+}
+
+#loginTitle{
+    font-size: large;
+    font-weight: 500;
+}
+
+label{
+    font-size: large;
+    font-weight: 400;
+}
+
+input{
+    height: 2rem;
+    width: 100%;
+    border: 1px solid #b6b6b6;
+    margin-bottom: 20px;
+    margin-top: 5px;
+}
+
+#loginBtn{
+    margin: 10px;
+    border: none;
+    background-color: rgb(100, 100, 246);
+    color: #fff;
+    padding: 10px;
+    border-radius: 30px;
+    width: 100px;
+} */
+
+@import url("https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap");
+
+.login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    box-sizing: border-box;
+    background-image: url(//qsf.fs.quoracdn.net/-4-ans_frontend_assets.images.home_page_bg_desktop.png-26-4770753d59b970e1.png);
+    width: 100%;
+    position: absolute;
+    min-height: 100%;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: scroll;
+}
+
+.login__container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width: 700px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+}
+
+.login__logo {
+    display: flex;
+    justify-content: center;
+}
+
+@media screen and (max-width : 744px) {
+    .login__logo {
+        margin-top: calc(100% - 100px);
+    }
+}
+
+.login__logo>img {
+    width: 200px;
+}
+
+.login__desc {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.login__desc>h3 {
+    margin-top: 10px;
+    text-align: center;
+    font-size: xx-large;
+    font-family: "Cedarville Cursive", cursive;
+}
+
+.login__desc>p {
+    color: gray;
+    text-align: center;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.login__auth {
+    display: flex;
+    margin-top: 50px;
+}
+
+.login__authOptions {
+    display: flex;
+    flex: 0.5;
+    flex-direction: column;
+    padding: 20px;
+    border-right: 1px solid lightgray;
+}
+
+.login__authOption {
+    display: flex;
+    align-items: center;
+    padding: 7px;
+    margin-bottom: 15px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.login__authOption:hover {
+    background-color: rgb(226, 226, 226);
+}
+
+.login__authOption>img {
+    height: 30px;
+    object-fit: contain;
+}
+
+.login__authOption>p {
+    margin-left: 11px;
+}
+
+.login__authDesc {
+    display: flex;
+    align-items: center;
+    padding: 7px;
+    margin-bottom: 15px;
+}
+
+.login__authDesc>p {
+    font-size: small;
+    color: gray;
+}
+
+.login__emailPass {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    flex: 0.5;
+    margin-left: 20px;
+}
+
+.login__label>h4 {
+    padding: 5px;
+}
+
+.login__inputFields {
+    display: flex;
+    flex-direction: column;
+    padding: 5px 0;
+}
+
+.login__inputField {
+    padding: 5px 0px;
+}
+
+.login__inputField>input {
+    padding: 10px;
+    width: 100%;
+    outline: none;
+    border: none;
+    background-color: rgb(236, 236, 236);
+}
+
+.login__forgButt {
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.login__forgButt>small {
+    color: gray;
+    cursor: pointer;
+}
+
+.login__forgButt>small:hover {
+    color: blue;
+    text-decoration: underline;
+}
+
+.login__forgButt>button {
+    padding: 9px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    background-color: #303237;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #46484e;
+    }
+}
+
+.login__emailPass>button {
+    padding: 9px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    background-color: #303237;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+    margin-top: 10px;
+
+    &:hover {
+        background-color: #46484e;
+    }
+}
+
+.login__lang {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+    margin-top: 30px;
+    padding: 10px;
+}
+
+.login__lang>p {
+    color: gray;
+    margin-right: 5px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.login__lang>p:hover {
+    color: gray;
+    margin-right: 5px;
+    text-decoration: underline;
+}
+
+.login__lang>.MuiSvgIcon-root {
+    color: gray;
+}
+
+.login__footer {
+    padding-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.login__footer>p {
+    color: gray;
+    font-size: small;
+    cursor: pointer;
+}
+
+.login__footer>p:hover {
+    text-decoration: underline;
+}
+
+@media only screen and (max-width: 576px) {
+    .login {
+        height: 100%;
+        margin-top: 20px;
+    }
+
+    .login__footer {
+        display: block;
+        margin-left: 20px;
+    }
+
+    .login__auth {
+        display: block;
+        margin-top: 0px;
+    }
+
+}

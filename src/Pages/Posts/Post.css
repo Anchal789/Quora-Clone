@@ -1,0 +1,286 @@
+.post {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  background-color: white;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  margin: auto;
+  margin: 10px;
+  width: 40vw;
+}
+@media screen and (max-width : 791px){
+  .post{
+    width: 100%;
+  }
+}
+.post_info {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+margin: 10px;
+
+}
+
+.post_info .nameAndDateDiv h5 {
+  margin-left: 10px;
+  cursor: pointer;
+  font-size: 13px;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.nameAndDateDiv {
+  display: grid;
+  grid-template-rows: auto auto;
+  gap: 5px;
+}
+
+.post_info .nameAndDateDiv small {
+  margin-left: 10px;
+}
+
+
+.post_body {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.post_question {
+  /* display: flex; */
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  margin: 10px;
+}
+
+.post_question p {
+  cursor: pointer;
+  letter-spacing: 0.05rem;
+  word-spacing: 0.2rem;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.post_btnAnswer {
+  font-size: 0.7rem;
+  padding: 5px 10px;
+  color: rgb(255, 255, 255);
+  border: 1px solid gray;
+  background-color: #a0201c;
+  border-radius: 20px;
+
+  &:hover {
+    background-color: #781814;
+  }
+}
+
+.post_footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.MuiSvgIcon-root {
+  color: gray;
+  cursor: pointer;
+}
+
+.post_footer span {
+  color: gray;
+  font-size: 0.5rem;
+}
+
+.post_footerActions {
+  display: flex;
+  gap: 20px;
+}
+
+.post_footerActions small {
+  color: gray;
+  font-weight: 500;
+}
+
+.post_footerAction {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.upvote {
+  height: 100%;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  padding-right: 5px;
+  padding-left: 20px;
+  border: 1px solid gray;
+  border-radius: 20px 0 0 20px;
+  background-color: rgb(236, 236, 236);
+
+  &:hover {
+    background-color: rgb(225, 225, 225);
+  }
+}
+
+.downvote {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding-left: 5px;
+  padding-right: 20px;
+  border: 1px solid gray;
+  border-radius: 0 20px 20px 0;
+  background-color: rgb(236, 236, 236);
+
+  &:hover {
+    background-color: rgb(225, 225, 225);
+  }
+}
+
+
+.comment {
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+
+  &:hover {
+    background-color: rgb(237, 237, 237);
+    border-radius: 20px;
+    border: 1px solid rgb(215, 215, 215);
+  }
+}
+
+.share {
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+
+  &:hover {
+    background-color: rgb(237, 237, 237);
+    border-radius: 20px;
+    border: 1px solid rgb(215, 215, 215);
+  }
+}
+
+
+.post_more {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+}
+
+
+.ReactModal__Overlay {
+  width: 700;
+  height: 600;
+  z-index: 1000;
+}
+
+.ReactModal__Content {
+  min-width: 600px;
+  margin: 50px 300px;
+}
+
+@media only screen and (max-width: 1250px) {
+
+      .ReactModal__Content {
+        margin: 50px 250px;
+      }
+
+}
+
+@media only screen and (max-width: 1000px) {
+  .ReactModal__Content {
+    margin: 50px 100px;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+    .ReactModal__Content {
+      margin: 0px;
+    }
+}
+
+.modal__question {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.modal__question>h1 {
+  color: #8f1f1b;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.modal__question>p {
+  color: gray;
+  font-size: small;
+}
+
+.modal__question>p>.name {
+  color: black;
+  font-weight: bold;
+}
+
+.modal__answer {
+  display: flex;
+  padding-top: 20px;
+  flex: 1;
+}
+
+.modal__answer>textarea {
+  width: 100%;
+  height: 250px;
+  padding: 5px;
+  font-size: 15px;
+  color: rgb(9, 9, 19);
+  border: 1px solid rgb(94, 94, 94);
+}
+
+.modal__button {
+  align-items: center;
+  margin-right: -20px;
+  border-top: 1px solid lightgray;
+}
+
+.modal__button>.cancle {
+  margin-left: auto;
+  border: none;
+  margin-top: 5px;
+  outline: none;
+  color: rgb(71, 71, 71);
+  font-weight: 500;
+  padding: 8px 10px;
+  margin-right: 10px;
+  border-radius: 33px;
+  background-color: #bababa;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #cfcccc;
+  }
+}
+
+.modal__button>.add {
+  border: none;
+  outline: none;
+  margin-top: 5px;
+  background-color: #a0201c;
+  color: white;
+  font-weight: 700;
+  padding: 8px 10px;
+  margin-right: 10px;
+  border-radius: 33px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #781814;
+  }
+}

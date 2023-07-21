@@ -1,0 +1,299 @@
+html,
+body {
+    width: 100%;
+    height: auto;
+    margin: auto;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1px;
+    background-color: white;
+    width: 100%;
+    position: sticky;
+    z-index: 1000;
+    top: 0;
+    box-shadow: 0px 5px 8px -9px rgba(0, 0, 0, 0.5);
+}
+
+.navbar_logo img {
+    height: 25px;
+    margin-right: 20px;
+}
+
+.navbar_icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+
+    .navbar_icon {
+        color: gray;
+        cursor: pointer;
+        padding: 5px 18px;
+        border-radius: 10px;
+
+        &:hover {
+            color: #a0201c;
+            background-color: rgb(242, 242, 242);
+        }
+
+        .MuiSvgIcon-root {
+            font-size: 2rem;
+        }
+    }
+}
+
+.navbar_input {
+    width: 20%;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    border: 1px solid lightgray;
+
+    .MuiSvgIcon-root {
+        color: gray;
+    }
+
+    #navbar-input {
+        width: 100%;
+        background-color: transparent;
+        outline: none;
+        border: none;
+        color: rgb(49, 49, 49);
+    }
+}
+
+.navbar_right {
+    display: flex;
+    align-items: center;
+    margin-left: 25px;
+}
+
+.navbar_right .navbar_avatar .MuiAvatar-root {
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+}
+
+
+.navbar_right .MuiSvgIcon-root {
+    font-size: 2rem;
+    color: gray;
+    cursor: pointer;
+    margin: 0 20px;
+
+    &:hover {
+        color: #a0201c;
+    }
+}
+
+.navbar_right .MuiButtonBase-root {
+    width: 10rem;
+    font-size: 0.8rem;
+    color: white;
+    text-transform: inherit;
+    background-color: #a0201c;
+    border-radius: 20px;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #861e1a;
+        box-shadow: 0px 1px 1px 1px gray;
+    }
+}
+
+
+.ReactModal__Overlay {
+    width: 700;
+    height: 600;
+    z-index: 1000;
+    backdrop-filter: blur(3px);
+}
+
+.ReactModal__Content {
+    min-width: 600px;
+    margin: 50px 300px;
+}
+
+
+.modal_title {
+    display: flex;
+    align-items: start;
+    margin-bottom: 5px;
+    border-bottom: 1px solid rgba(187, 187, 187, 0.5);
+    flex-direction: column;
+}
+
+.modal_title .headings {
+    display: flex;
+    gap: 30px;
+}
+
+.headings h5 {
+    color: gray;
+    font-size: 20px;
+    cursor: pointer;
+    font-weight: 500;
+    margin-right: 30px;
+
+    &:hover {
+        color: rgb(142, 0, 0);
+    }
+}
+
+.modal_info {
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.modal_info p {
+    margin-left: 10px;
+    font-size: small;
+    color: gray;
+}
+
+.modal_scope {
+    display: flex;
+    color: gray;
+    padding: 5px 10px;
+    margin-left: 10px;
+    background-color: rgb(206, 206, 206);
+    border-radius: 33px;
+    cursor: pointer;
+}
+
+.modal_scope p {
+    font-weight: 600;
+}
+
+.modal_field {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 50px 0 10px;
+    margin-top: 10px;
+}
+
+.modal_fieldLink {
+    width: 100%;
+    color: gray;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.modal_fieldLink .MuiInputBase-root {
+    width: 100%;
+}
+
+.modal_fieldLink input {
+    width: 100%;
+    border: none;
+    outline: none;
+    margin: 5px;
+}
+
+.modal_buttons {
+    display: flex;
+    align-items: center;
+    margin-top: 220px;
+    margin-right: 20px;
+    margin-left: auto;
+}
+
+.cancle {
+    margin-left: auto;
+    border: none;
+    margin-top: 5px;
+    outline: none;
+    color: rgb(81, 81, 81);
+    font-weight: 500;
+    padding: 10px;
+    margin-right: 10px;
+    border-radius: 33px;
+    cursor: pointer;
+    background-color: #a4a4a4;
+
+    &:hover {
+        background-color: #d7d7d7;
+    }
+}
+
+.add {
+    margin-left: auto;
+    border: none;
+    margin-top: 5px;
+    outline: none;
+    color: white;
+    font-weight: 500;
+    padding: 10px;
+    margin-right: 10px;
+    border-radius: 33px;
+    cursor: pointer;
+    background-color: #a0201c;
+
+    &:hover {
+        background-color: #781814;
+    }
+}
+
+
+@media screen and (max-width: 1250px) {
+
+    .ReactModal__Content {
+        margin: 50px 250px;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .ReactModal__Content {
+        margin: 50px 100px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+
+    .ReactModal__Content {
+        margin: 0px;
+    }
+}
+
+@media screen and (max-width : 894px) {
+    .navbar {
+        width: fit-content;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .navbar {
+        justify-content: flex-start;
+        padding: 5px 0;
+        width: fit-content;
+    }
+
+    .navbar_icons {
+        display: none;
+    }
+
+    .navbar_input {
+        display: none;
+    }
+
+
+    .navbar_right {
+        gap: 10px;
+    }
+
+    /* .MuiButtonBase-root {
+        width: 100%;
+    }
+
+    .MuiSvgIcon-root {
+        display: none;
+    } */
+
+}
