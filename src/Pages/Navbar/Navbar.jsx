@@ -32,7 +32,7 @@ const Navbar = () => {
     userName: "",
     userImage: "",
     postedDate: "",
-    answers : []
+    answers: [],
   });
   const [userLength, setUserlength] = useState(0);
 
@@ -53,12 +53,7 @@ const Navbar = () => {
   ];
   const database = getDatabase(app);
 
-  get(
-    child(
-      ref(database),
-      `userQuestions`
-    )
-  ).then((snapShot) => {
+  get(child(ref(database), `userQuestions`)).then((snapShot) => {
     setUserlength(Object.keys(snapShot.val()).length);
   });
 
@@ -69,21 +64,25 @@ const Navbar = () => {
       userName: loginCred.name,
       userImage: loginCred.image,
       postedDate: `${date.getFullYear()} ${months[date.getMonth()]}`,
-      answers : [""]
+      answers: [""],
     });
-    setInput("");
-  };
-
-  const modalOpenClose =()=>{
-    setOpenModal(!openModal);
     const putData = () => {
-      set(ref(database, `userQuestions/${userLength+1}`), {
-        userQuestion,
-      });
+      if (userQuestion.question === "") {
+        alert("Please write something.");
+      } else {
+        set(ref(database, `userQuestions/${userLength + 1}`), {
+          userQuestion,
+        });
+      }
       console.log("successfull");
     };
     putData();
-  }
+    setInput("");
+  };
+
+  const modalOpenClose = () => {
+    setOpenModal(!openModal);
+  };
 
   const auth = getAuth(app);
 
@@ -122,10 +121,10 @@ const Navbar = () => {
       }
     });
     if (user === null) {
-      navigate("/login");
+      navigate("/");
       console.error("no user found");
       signOut(auth);
-    } 
+    }
   }, []);
 
   return (
@@ -166,7 +165,7 @@ const Navbar = () => {
           style={{ display: "inline", width: "100px", textAlign: "center" }}
           onClick={() => {
             signOut(auth);
-            navigate("/login");
+            navigate("/");
           }}
         >
           <LogoutIcon />
@@ -198,7 +197,7 @@ const Navbar = () => {
                 type="text"
                 value={input}
                 required
-                onChange={(e) => setInput(e.target.value)}
+                onInput={(e) => setInput(e.target.value)}
                 placeholder="Start your question with 'what', 'How', 'Why' etc."
               />
 
@@ -213,10 +212,7 @@ const Navbar = () => {
               </div>
             </div>
             <div className="modal_buttons">
-              <button
-                className="cancle"
-                onClick={modalOpenClose}
-              >
+              <button className="cancle" onClick={modalOpenClose}>
                 Close
               </button>
               <button type="submit" className="add" onClick={handleAddQuestion}>

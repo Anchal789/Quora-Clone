@@ -28,12 +28,20 @@ const Login = () => {
   const signUpWithGoogle = () => {
     signInWithPopup(auth, googleProvider)
       .then(() => {
-        navigate("/");
+        navigate("/home");
         myContext.setState({
           email: auth.currentUser.email,
           image: auth.currentUser.photoURL,
           name: auth.currentUser.displayName,
         });
+        localStorage.setItem(
+          "loginCred",
+          JSON.stringify({
+            email: auth.currentUser.email,
+            name: auth.currentUser.displayName,
+            image: auth.currentUser.photoURL,
+          })
+        );
       })
       .catch((error) => {
         setLoginError("Invalid Credentials");
@@ -44,7 +52,7 @@ const Login = () => {
   const signInUser = () => {
     signInWithEmailAndPassword(auth, email, password)
       .then(() => {
-        navigate("/");
+        navigate("/home");
       })
       .catch((error) => {
         setLoginError("Invalid Credentials");
@@ -70,9 +78,19 @@ const Login = () => {
         </div>
         <div className="login__auth">
           <div className="login__authOptions">
-            <div className="login__authOption">
+            <div className="g-sign-in-button" onClick={signUpWithGoogle}>
+              <div className="content-wrapper">
+                <div className="logo-wrapper">
+                  <img src="https://developers.google.com/identity/images/g-logo.png" />
+                </div>
+                <span className="text-container">
+                  <span>Sign in with Google</span>
+                </span>
+              </div>
+            </div>  
+            {/* <div className="login__authOption">
               <button onClick={signUpWithGoogle}>Sign in With Google</button>
-            </div>
+            </div> */}
             <div className="login__authOption">
               <img
                 className="login__googleAuth"

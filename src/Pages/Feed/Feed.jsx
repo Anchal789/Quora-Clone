@@ -35,7 +35,7 @@ const Feed = () => {
   return (
     <div className="feed">
       <QueryBox />
-      {
+      { 
         userQuestionList.map((userQuestion,index)=>(
           userQuestion.userQuestion.question === "" ? null : (<UserQuestion key={index} userName={userQuestion.userQuestion.userName} question={userQuestion.userQuestion.question} userImage={userQuestion.userQuestion.userImage} postedDate={userQuestion.userQuestion.postedDate} answers={userQuestion.userQuestion.answers}/>)
         ))
