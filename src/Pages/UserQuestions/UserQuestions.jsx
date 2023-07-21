@@ -1,8 +1,8 @@
-import React, { useState, useEffect, Fragment, useContext } from "react";
+import React, { useState} from "react";
 import { Avatar } from "@mui/material";
 import "../Posts/Post.css";
 import "../Posts/modal.css";
-import { Button, Input } from "@mui/material";
+import { Button } from "@mui/material";
 import ThumbUpOutlinedIcon from "@mui/icons-material/ThumbUpOutlined";
 import ThumbDownOutlinedIcon from "@mui/icons-material/ThumbDownOutlined";
 import ChatBubbleOutlineOutlinedIcon from "@mui/icons-material/ChatBubbleOutlineOutlined";
@@ -26,11 +26,8 @@ import {
 } from "react-share";
 import CloseIcon from "@mui/icons-material/Close";
 import Popup from "reactjs-popup";
-import axios from "axios";
-import { MyContext } from "../../context/Mycontext";
 
-const UserQuestion = ({userName, question, userImage, postedDate, answers }) => {
-  const mycontext = useContext(MyContext);
+const UserQuestion = ({userName, question, userImage, postedDate }) => {
   const [openModal, setOpenModal] = useState(false);
   const [addAnswer, setAddAnswer] = useState("");
   const [showAnswer, setShowAnswer] = useState(false);

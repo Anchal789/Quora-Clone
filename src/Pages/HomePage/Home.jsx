@@ -1,7 +1,7 @@
-import React, { useContext, useEffect, useState } from "react";
+import React from "react";
 import Navbar from "../Navbar/Navbar";
-import { MyContext } from "../../context/Mycontext";
-import Logout from "../LogoutPage/Logout";
+// import { MyContext } from "../../context/Mycontext";
+// import Logout from "../LogoutPage/Logout";
 import Sidebar from "../Sidebar/Sidebar";
 import Feed from "../Feed/Feed";
 import Widgets from "../Widgets/Widgets";

@@ -1,7 +1,6 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import "./Register.css";
 import { useNavigate } from "react-router";
-import { MyContext } from "../../context/Mycontext";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { app } from "../../assets/firebase";
 
@@ -18,7 +17,6 @@ const Register = () => {
   const [emailError, setEmailError] = useState("");
   const [passwordError, setpasswordError] = useState("");
 
-  const mycontext = useContext(MyContext);
   const navigate = useNavigate();
   const auth = getAuth(app);
 

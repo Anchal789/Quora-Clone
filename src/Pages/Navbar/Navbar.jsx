@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useState } from "react";
 import HomeIcon from "@mui/icons-material/Home";
 import FeaturedPlayListOutlinedIcon from "@mui/icons-material/FeaturedPlayListOutlined";
 import AssignmentTurnedInOutlinedIcon from "@mui/icons-material/AssignmentTurnedInOutlined";
@@ -11,21 +11,17 @@ import Modal from "react-modal";
 import ExpandMoreOutlinedIcon from "@mui/icons-material/ExpandMoreOutlined";
 import LinkOutlinedIcon from "@mui/icons-material/LinkOutlined";
 import LogoutIcon from "@mui/icons-material/Logout";
-import { MyContext } from "../../context/Mycontext";
 import "./Navbar.css";
-import Logout from "../LogoutPage/Logout";
 import { useNavigate } from "react-router";
-import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
+import { getAuth, signOut } from "firebase/auth";
 import { app } from "../../assets/firebase";
-import { child, get, getDatabase, onValue, ref, set } from "firebase/database";
+import { child, get, getDatabase,  ref, set } from "firebase/database";
 
 const Navbar = () => {
-  const mycontext = useContext(MyContext);
   const loginCred = JSON.parse(localStorage.getItem("loginCred"));
   const [openModal, setOpenModal] = useState(false);
   const [input, setInput] = useState("");
   const [inputUrl, setInputUrl] = useState("");
-  const [user, setUser] = useState();
   const navigate = useNavigate();
   const [userQuestion, setUserQuestion] = useState({
     question: "",
@@ -85,47 +81,6 @@ const Navbar = () => {
   };
 
   const auth = getAuth(app);
-
-  useEffect(() => {
-    // onValue(
-    //   ref(
-    //     getDatabase,
-    //     `questionDatabase/questions/${mycontext.questionDatabase}`
-    //   ),
-    //   (snapshot) => {
-    //     setQuestionList(snapshot.val());
-    //     console.log(snapshot.val());
-    //   }
-    // );
-
-    // const putData = ()=>{
-    //   set(ref(database, "userQuestions"),{
-    //     questions
-    //   })
-    //   console.log("successfull")
-    // }
-    // putData()
-    onAuthStateChanged(auth, (user) => {
-      if (user) {
-        setUser(user);
-        localStorage.setItem(
-          "loginCred",
-          JSON.stringify({
-            email: user.email,
-            name: user.displayName,
-            image: user.photoURL,
-          })
-        );
-      } else {
-        setUser(null);
-      }
-    });
-    if (user === null) {
-      navigate("/");
-      console.error("no user found");
-      signOut(auth);
-    }
-  }, []);
 
   return (
     <div className="navbar">

@@ -1,8 +1,8 @@
-import React, { useState, useEffect, Fragment, useContext } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Avatar } from "@mui/material";
 import "./Post.css";
 import "./modal.css";
-import { Button, Input } from "@mui/material";
+import { Button } from "@mui/material";
 import ThumbUpOutlinedIcon from "@mui/icons-material/ThumbUpOutlined";
 import ThumbDownOutlinedIcon from "@mui/icons-material/ThumbDownOutlined";
 import ChatBubbleOutlineOutlinedIcon from "@mui/icons-material/ChatBubbleOutlineOutlined";
@@ -51,7 +51,6 @@ const Post = ({ id, question, answers }) => {
   const [addAnswer, setAddAnswer] = useState("");
   const [showAnswer, setShowAnswer] = useState(false);
   const [userAnswer, setUserAnswer] = useState([]);
-  const [userAnswer1, setUserAnswer1] = useState();
 
   const date = new Date();
   const database = getDatabase(app);

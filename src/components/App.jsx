@@ -1,16 +1,13 @@
-import React, { useContext } from "react";
+import React from "react";
 import { gapi } from "gapi-script";
 import { useEffect } from "react";
-import Navbar from "../Pages/Navbar/Navbar";
-import { Route, Routes, useNavigate } from "react-router";
+import { Route, Routes } from "react-router";
 import Home from "../Pages/HomePage/Home";
 import Login from "../Pages/LoginPage/Login";
 import Register from "../Pages/RegisterPage/Register";
-import MycontextProvider, { MyContext } from "../context/Mycontext";
+import MycontextProvider from "../context/Mycontext";
 
 const App = () => {
-  const mycontext = useContext(MyContext);
-  const navigate = useNavigate();
   const clientId =
     "497854168642-sihpn5dsqj7q8spi11gerjbbug1d11o4.apps.googleusercontent.com";
 

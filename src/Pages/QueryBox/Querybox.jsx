@@ -1,10 +1,8 @@
-import React, { useContext } from "react";
+import React from "react";
 import "./Querybox.css";
 import { Avatar } from "@mui/material";
-import { MyContext } from "../../context/Mycontext";
 
 const QueryBox = () => {
-  const mycontext = useContext(MyContext);
   const loginCred = JSON.parse(localStorage.getItem("loginCred"));
   return (
     <div className="queryBox">

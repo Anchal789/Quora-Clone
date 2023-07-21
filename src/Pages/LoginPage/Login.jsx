@@ -1,6 +1,4 @@
 import React, { useContext, useState } from "react";
-import { Helmet } from "react-helmet";
-import Logout from "../LogoutPage/Logout";
 import "./Login.css";
 import { MyContext } from "../../context/Mycontext";
 import { useNavigate } from "react-router";
@@ -18,8 +16,8 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [loginError, setLoginError] = useState("");
   const navigate = useNavigate();
-  const clientId =
-    "497854168642-sihpn5dsqj7q8spi11gerjbbug1d11o4.apps.googleusercontent.com";
+  // const clientId =
+  //   "497854168642-sihpn5dsqj7q8spi11gerjbbug1d11o4.apps.googleusercontent.com";
 
   const auth = getAuth(app);
   const googleProvider = new GoogleAuthProvider();
@@ -59,9 +57,9 @@ const Login = () => {
       });
   };
 
-  const onFailure = (res) => {
-    console.log("Login Failure", res);
-  };
+  // const onFailure = (res) => {
+  //   console.log("Login Failure", res);
+  // };
 
   return (
     <div className="login">
@@ -80,7 +78,7 @@ const Login = () => {
             <div className="g-sign-in-button" onClick={signUpWithGoogle}>
               <div className="content-wrapper">
                 <div className="logo-wrapper">
-                  <img src="https://developers.google.com/identity/images/g-logo.png" />
+                  <img src="https://developers.google.com/identity/images/g-logo.png" alt="" />
                 </div>
                 <span className="text-container">
                   <span>Sign in with Google</span>

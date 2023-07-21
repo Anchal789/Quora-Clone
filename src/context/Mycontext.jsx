@@ -1,6 +1,4 @@
 import React, { createContext, useState } from "react";
-import { initializeApp } from "firebase/app";
-import { getAuth } from "firebase/auth";
 
 export const MyContext = createContext();
 
