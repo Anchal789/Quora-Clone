@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Quora-Clone/static/css/main.760f4d20.css",
+    "main.js": "/Quora-Clone/static/js/main.0dbe3acd.js",
+    "index.html": "/Quora-Clone/index.html",
+    "main.760f4d20.css.map": "/Quora-Clone/static/css/main.760f4d20.css.map",
+    "main.0dbe3acd.js.map": "/Quora-Clone/static/js/main.0dbe3acd.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.760f4d20.css",
+    "static/js/main.0dbe3acd.js"
+  ]
+}
