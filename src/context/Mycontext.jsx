@@ -9,7 +9,9 @@ const MycontextProvider = (props) => {
     name: "",
   });
 
-  const [questionDatabase, setQuestionDatabase] = useState("history");
+  const [questionDatabase, setQuestionDatabase] = useState("userPost");
+  const [anotherFeed, setAnotherFeed] = useState("false");
+  const [following, setFollowing] = useState("");
  
   const [login, setLogin] = useState(false);
   const loginStatus = () => {
@@ -20,7 +22,7 @@ const MycontextProvider = (props) => {
     setState({ ...state, [key]: value });
   };
   return (
-    <MyContext.Provider value={{ state,setState, unpdateContext, login, loginStatus,questionDatabase,setQuestionDatabase }}>
+    <MyContext.Provider value={{ state,setState, unpdateContext, login, loginStatus,questionDatabase,setQuestionDatabase, setAnotherFeed, anotherFeed, following,setFollowing }}>
       {props.children}
     </MyContext.Provider>
   );

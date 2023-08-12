@@ -61,37 +61,8 @@ const Register = () => {
       emailRegex.test(state.email) &&
       passwordRegex.test(state.password)
     ) {
-      // mycontext.loginStatus();
       navigate("/login");
-
       createUserWithEmailAndPassword(auth, state.email, state.password);
-
-      // const { username, name, email, password } = state;
-
-      // const response = await fetch(
-      //   "https://quora-clone-390418-default-rtdb.firebaseio.com/quoracloneregister.json",
-      //   {
-      //     method: "POST",
-      //     headers: {
-      //       "Content-Type": "application/json",
-      //     },
-      //     body: JSON.stringify({
-      //       username,
-      //       name,
-      //       email,
-      //       password,
-      //     }),
-      //   }
-      // );
-
-      // if (response) {
-      //   setState({
-      //     username: "",
-      //     name: "",
-      //     email: "",
-      //     password: "",
-      //   });
-      // }
     }
   };
 

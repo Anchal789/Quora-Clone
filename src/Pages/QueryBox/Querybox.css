@@ -1,26 +1,52 @@
 .queryBox {
-  display: flex;
-  flex-direction: column;
   padding: 10px;
   border: 1px solid lightgray;
   background-color: white;
-  cursor: pointer;
   border-radius: 5px;
-  width: 100%;
-  margin-top: 10px;
-  margin-bottom: 20px;
-
+  width: 40vw;
+  margin: 10px;
+  position: fixed;
   &:hover {
     border: 1x solid gray;
   }
 }
 
+.queryBox_quora h3{
+  font-size: 1.5rem;
+  color: #a0201c;
+  font-weight: bold;
+}
+.queryBox_info h5{
+  font-size: 1.2rem;
+  color: #a0201c;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+
+@media screen and (max-width : 1250px) {
+  .queryBox {
+    width: 48vw;
+  }
+}
+
+
 @media screen and (max-width : 867px) {
   .queryBox {
     width: 100%;
-    margin: 10px;
+    /* margin: 10px; */
+    margin: 5px -10px 0px 0px
+
   }
 }
+@media screen and (max-width : 791px) {
+  .queryBox {
+    width: 100%;
+    margin: 10px;
+    margin: 5px -10px 0px 0px
+  }
+}
+
 
 @media screen and (max-width : 575px) {
   .queryBox {
@@ -33,12 +59,7 @@
 .queryBox_info {
   display: flex;
   align-items: center;
-}
-
-.queryBox_info h5 {
-  color: rgb(82, 82, 82);
-  font-weight: 300;
-  margin-left: 10px;
+  justify-content: center;
 }
 
 .queryBox_quora {
@@ -46,9 +67,18 @@
   margin-top: 8px;
 }
 
-.queryBox_quora input {
-  color: gray;
-  font-weight: bold;
-  width: 100%;
-  font-size: medium;
+.add_button {
+  width: 8rem;
+  font-size: 0.8rem;
+  color: white;
+  text-transform: inherit;
+  background-color: #a0201c;
+  border-radius: 20px;
+  cursor: pointer;
+  padding: 10px;
+
+  &:hover {
+      background-color: #861e1a;
+      box-shadow: 0px 1px 1px 1px gray;
+  }
 }

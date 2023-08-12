@@ -103,7 +103,7 @@ input{
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
-    overflow: scroll;
+
 }
 
 .login__container {
@@ -113,6 +113,7 @@ input{
     width: 700px;
     background-color: rgb(255, 255, 255);
     border-radius: 10px;
+    margin: 10px;
 }
 
 .login__logo {
@@ -120,11 +121,6 @@ input{
     justify-content: center;
 }
 
-@media screen and (max-width : 744px) {
-    .login__logo {
-        margin-top: calc(100% - 100px);
-    }
-}
 
 .login__logo>img {
     width: 200px;
@@ -134,7 +130,7 @@ input{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-top: 10px;
+    margin: 10px;
 }
 
 .login__desc>h3 {
@@ -218,6 +214,7 @@ input{
     flex-direction: column;
     padding: 20px;
     border-right: 1px solid lightgray;
+    margin-left: 10px;
 }
 
 .login__authOption {
@@ -319,7 +316,19 @@ input{
     }
 }
 
-.login__emailPass>button {
+.login_buttons{
+    display: flex;
+    justify-content: space-around;
+}
+
+.login_buttons p{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.login_buttons>button, .registerButton {
     padding: 9px;
     border-radius: 5px;
     border: none;
@@ -374,6 +383,7 @@ input{
     color: gray;
     font-size: small;
     cursor: pointer;
+    text-align: center;
 }
 
 .login__footer>p:hover {
@@ -383,7 +393,7 @@ input{
 @media only screen and (max-width: 576px) {
     .login {
         height: 100%;
-        margin-top: 20px;
+        /* margin-top: 20px; */
     }
 
     .login__footer {

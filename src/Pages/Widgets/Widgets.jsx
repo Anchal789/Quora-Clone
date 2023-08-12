@@ -5,10 +5,12 @@ import WidgetOptions from "../WidgetsOptions/WidgetsOptions";
 const Widget = () => {
   return (
     <div className="widget">
-      <div className="widget_header">
-        <h4>Space to follow</h4>
-      </div>
-      <WidgetOptions />
+      <span>
+        <div className="widget_header">
+          <h4>Space to follow</h4>
+        </div>
+        <WidgetOptions />
+      </span>
     </div>
   );
 };

@@ -3,7 +3,7 @@
 :before {
     border: none;
     box-sizing: border-box;
-    font-family: Poppins, sans-serif;
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
     margin: 0;
     outline: 0;
     padding: 0;
@@ -14,6 +14,18 @@ body{
     background-color: rgb(241, 241, 241);
 
 }
+
+
+@media only screen and (max-width: 970px) {
+    .quora {
+      width: fit-content;
+    }
+  }
+@media only screen and (max-width: 576px) {
+    .quora {
+      width: fit-content;
+    }
+  }
 
 .quora .quora_content {
     display: grid;

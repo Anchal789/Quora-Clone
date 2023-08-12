@@ -1,13 +1,8 @@
-html,
-body {
-    width: 100%;
-    height: auto;
-    margin: auto;
-}
-
 .navbar {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 33.3%);
     justify-content: center;
+    text-align: center;
     align-items: center;
     padding: 1px;
     background-color: white;
@@ -16,61 +11,61 @@ body {
     z-index: 1000;
     top: 0;
     box-shadow: 0px 5px 8px -9px rgba(0, 0, 0, 0.5);
+    margin-bottom: 0;
 }
 
 .navbar_logo img {
-    height: 25px;
+    height: 30px;
     margin-right: 20px;
 }
 
-.navbar_icons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: 20px;
+.navbar_icon {
+    color: gray;
+    cursor: pointer;
+    /* padding: 5px 0px; */
+    border-radius: 10px;
 
-    .navbar_icon {
-        color: gray;
-        cursor: pointer;
-        padding: 5px 18px;
-        border-radius: 10px;
-
-        &:hover {
-            color: #a0201c;
-            background-color: rgb(242, 242, 242);
-        }
-
-        .MuiSvgIcon-root {
-            font-size: 2rem;
-        }
-    }
 }
 
-.navbar_input {
-    width: 20%;
-    height: 35px;
-    display: flex;
-    align-items: center;
-    border: 1px solid lightgray;
-
-    .MuiSvgIcon-root {
-        color: gray;
-    }
-
-    #navbar-input {
-        width: 100%;
-        background-color: transparent;
-        outline: none;
-        border: none;
-        color: rgb(49, 49, 49);
-    }
+.MuiSvgIcon-root {
+    font-size: 2rem;
 }
 
+
+#google_translate_element {
+
+    margin: 0 9px 0 0;
+    border-radius: 30px;
+}
+
+
+.navbar_middle {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
 .navbar_right {
     display: flex;
     align-items: center;
-    margin-left: 25px;
+    margin-right: 10px;
 }
+
+.navbar_right button {
+    width: 8rem;
+    font-size: 0.8rem;
+    color: white;
+    text-transform: inherit;
+    background-color: #a0201c;
+    border-radius: 20px;
+    cursor: pointer;
+    padding: 10px;
+
+    &:hover {
+        background-color: #861e1a;
+        box-shadow: 0px 1px 1px 1px gray;
+    }
+}
+
 
 .navbar_right .navbar_avatar .MuiAvatar-root {
     height: 30px;
@@ -79,7 +74,7 @@ body {
 }
 
 
-.navbar_right .MuiSvgIcon-root {
+.navbar_right .MuiSvgIcon-root, .navbar_middle .MuiSvgIcon-root {
     font-size: 2rem;
     color: gray;
     cursor: pointer;
@@ -88,6 +83,20 @@ body {
     &:hover {
         color: #a0201c;
     }
+}
+
+.navbar_avatar {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar_avatar h5 {
+    /* font-size: 1rem; */
+    color: #a0201c;
+    font-weight: bold;
+    margin-left: 10px;
 }
 
 .navbar_right .MuiButtonBase-root {
@@ -110,12 +119,17 @@ body {
     width: 700;
     height: 600;
     z-index: 1000;
-    backdrop-filter: blur(3px);
+    backdrop-filter: blur(10px);
+}
+
+.ReactModal__Overlay--after-open {
+    background-color: #8484847c !important;
 }
 
 .ReactModal__Content {
     min-width: 600px;
     margin: 50px 300px;
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.1);
 }
 
 
@@ -241,13 +255,27 @@ body {
     }
 }
 
+.ant-popover-arrow{
+    left: 62.5px !important;
+}
 
-@media screen and (max-width: 1250px) {
+
+
+@media only screen and (max-width: 1250px) {
 
     .ReactModal__Content {
         margin: 50px 250px;
     }
+
 }
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    select,
+    textarea,
+    input {
+      font-size: 16px;
+    }
+  }
 
 @media only screen and (max-width: 1000px) {
     .ReactModal__Content {
@@ -258,24 +286,31 @@ body {
 @media screen and (max-width: 576px) {
 
     .ReactModal__Content {
-        margin: 0px;
+        margin: -17px !important;
+        top: 30% !important;
+    }
+}
+
+@media screen and (max-width : 1403px) {
+    .navbar {
+        display: flex;
     }
 }
 
 @media screen and (max-width : 894px) {
     .navbar {
-        width: fit-content;
+        width: 100%;
     }
 }
+
 
 @media only screen and (max-width: 576px) {
     .navbar {
         justify-content: flex-start;
         padding: 5px 0;
-        width: fit-content;
     }
 
-    .navbar_icons {
+    .navbar_middle_icon{
         display: none;
     }
 
@@ -283,9 +318,12 @@ body {
         display: none;
     }
 
+    .navbar_logo {
+        margin: 10px;
+    }
 
-    .navbar_right {
-        gap: 10px;
+    .ant-popover{
+        display: none;
     }
 
     /* .MuiButtonBase-root {

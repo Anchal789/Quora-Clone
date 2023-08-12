@@ -2,12 +2,8 @@ import React, { useState} from "react";
 import { Avatar } from "@mui/material";
 import "../Posts/Post.css";
 import "../Posts/modal.css";
-import { Button } from "@mui/material";
-import ThumbUpOutlinedIcon from "@mui/icons-material/ThumbUpOutlined";
-import ThumbDownOutlinedIcon from "@mui/icons-material/ThumbDownOutlined";
 import ChatBubbleOutlineOutlinedIcon from "@mui/icons-material/ChatBubbleOutlineOutlined";
 import LoopOutlinedIcon from "@mui/icons-material/LoopOutlined";
-import MoreHorizOutlinedIcon from "@mui/icons-material/MoreHorizOutlined";
 import Modal from "react-modal";
 
 import {
@@ -27,7 +23,7 @@ import {
 import CloseIcon from "@mui/icons-material/Close";
 import Popup from "reactjs-popup";
 
-const UserQuestion = ({userName, question, userImage, postedDate }) => {
+const UserQuestion = ({userName, question, userImage, postedDate,  }) => {
   const [openModal, setOpenModal] = useState(false);
   const [addAnswer, setAddAnswer] = useState("");
   const [showAnswer, setShowAnswer] = useState(false);
@@ -72,9 +68,7 @@ const UserQuestion = ({userName, question, userImage, postedDate }) => {
         <div className="post_question">
           <p>{question}</p>
 
-          <Button className="post_btnAnswer" onClick={() => setOpenModal(true)}>
-            Add Comment
-          </Button>
+          
           <Modal
             isOpen={openModal}
             ariaHideApp={false}
@@ -84,7 +78,7 @@ const UserQuestion = ({userName, question, userImage, postedDate }) => {
             <div className="modal__question">
               <h1>{question}</h1>
               <p>
-                asked by <span className="name">{loginCred.name}</span> {""}
+                asked by <span className="name">{loginCred.name || loginCred.email.split("@")[0]}</span> {""}
                 on{" "}
                 <span className="name">
                  {date.getFullYear()} {months[date.getMonth()]}
@@ -96,7 +90,7 @@ const UserQuestion = ({userName, question, userImage, postedDate }) => {
                 value={addAnswer}
                 required
                 onChange={(e) => setAddAnswer(e.target.value)}
-                placeholder="Enter Your Answer Here"
+                placeholder="Enter Your Comment Here"
                 type="text"
               />
             </div>
@@ -105,7 +99,7 @@ const UserQuestion = ({userName, question, userImage, postedDate }) => {
                 Cancel
               </button>
               <button type="sumbit" onClick={handleAddAnswer} className="add">
-                Add Answer
+                Add Comment
               </button>
             </div>
           </Modal>
@@ -113,12 +107,12 @@ const UserQuestion = ({userName, question, userImage, postedDate }) => {
 
         {showAnswer && (
           <>
-            <Button
+            <button
               className="post_btnAnswer"
               onClick={() => setShowAnswer(!showAnswer)}
             >
-              {showAnswer ? "Hide Answer" : "View Answers"}
-            </Button>
+              {showAnswer ? "Hide Comments" : "View Comments"}
+            </button>
             <div className="post_answer">
               <hr
                 style={{
@@ -187,14 +181,9 @@ const UserQuestion = ({userName, question, userImage, postedDate }) => {
       <div className="post_footer">
         <div className="post_footerActions">
           <div className="post_footerAction">
-            <div className="upvote">
-              <ThumbUpOutlinedIcon />
-              <small>{123}</small>
-            </div>
-            <div className="downvote">
-              <ThumbDownOutlinedIcon />
-              <small>{10}</small>
-            </div>
+          <button className="post_btnAnswer" onClick={() => setOpenModal(true)}>
+            Add Comment
+          </button>
           </div>
           <div className="comment" onClick={() => setShowAnswer(!showAnswer)}>
             <ChatBubbleOutlineOutlinedIcon />
@@ -280,9 +269,9 @@ const UserQuestion = ({userName, question, userImage, postedDate }) => {
             </span>
           </div>
         </div>
-        <div className="post_more">
+        {/* <div className="post_more">
           <MoreHorizOutlinedIcon />
-        </div>
+        </div> */}
       </div>
     </div>
   );

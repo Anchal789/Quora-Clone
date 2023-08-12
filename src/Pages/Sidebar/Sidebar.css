@@ -1,24 +1,27 @@
 .sidebar {
   /* flex: ; */
   height: 100%;
-  margin-left: 225px;
+  margin-left: 115px;
   margin-right: 10px;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 50px;
+  /* position: fixed; */
+}
+
+@media only screen and (max-width: 1403px) {
+  .sidebar {
+    margin-left: 50px;
+  }
 }
 
 @media only screen and (max-width: 992px) {
   .sidebar {
-    margin-left: 0px;
+    margin-left: 18px;
   }
 }
 
-@media only screen and (max-width: 768px) {}
 
 @media only screen and (max-width: 576px) {
   .sidebar {
-    /* display: none; */
     position: static;
+    margin-right: 0;
   }
 }

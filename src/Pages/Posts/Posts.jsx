@@ -2,12 +2,8 @@ import React, { useState, useEffect, useContext } from "react";
 import { Avatar } from "@mui/material";
 import "./Post.css";
 import "./modal.css";
-import { Button } from "@mui/material";
-import ThumbUpOutlinedIcon from "@mui/icons-material/ThumbUpOutlined";
-import ThumbDownOutlinedIcon from "@mui/icons-material/ThumbDownOutlined";
 import ChatBubbleOutlineOutlinedIcon from "@mui/icons-material/ChatBubbleOutlineOutlined";
 import LoopOutlinedIcon from "@mui/icons-material/LoopOutlined";
-import MoreHorizOutlinedIcon from "@mui/icons-material/MoreHorizOutlined";
 import Modal from "react-modal";
 
 import {
@@ -145,7 +141,7 @@ const Post = ({ id, question, answers }) => {
     };
     putData();
     setOpenModal(!openModal);
-    console.log(userAnswer);
+    setAddAnswer("")
   };
 
   const modalOpenClose = () => {
@@ -168,9 +164,6 @@ const Post = ({ id, question, answers }) => {
         <div className="post_question">
           <p>{question}</p>
 
-          <Button className="post_btnAnswer" onClick={modalOpenClose}>
-            Add Comment
-          </Button>
           <Modal
             isOpen={openModal}
             ariaHideApp={false}
@@ -196,7 +189,7 @@ const Post = ({ id, question, answers }) => {
                 value={addAnswer}
                 required
                 onChange={(e) => setAddAnswer(e.target.value)}
-                placeholder="Enter Your Answer Here"
+                placeholder="Enter Your Comment Here"
                 type="text"
               />
             </div>
@@ -205,7 +198,7 @@ const Post = ({ id, question, answers }) => {
                 Cancel
               </button>
               <button type="sumbit" onClick={handleAddAnswer} className="add">
-                Add Answer
+                Add Comment
               </button>
             </div>
           </Modal>
@@ -213,12 +206,12 @@ const Post = ({ id, question, answers }) => {
 
         {showAnswer && (
           <>
-            <Button
+            <button
               className="post_btnAnswer"
               onClick={() => setShowAnswer(!showAnswer)}
             >
-              {showAnswer ? "Hide Answer" : "View Answers"}
-            </Button>
+              {showAnswer ? "Hide Comments" : "View Comments"}
+            </button>
             <div className="post_answer">
               <hr
                 style={{
@@ -237,11 +230,8 @@ const Post = ({ id, question, answers }) => {
                         letterSpacing: "0.05rem",
                       }}
                       key={index}
-
                     >
-                      <div
-                        style={{ display: "flex", textAlign: "center" }}
-                      >
+                      <div style={{ display: "flex", textAlign: "center" }}>
                         <Avatar src={answerUser.userImage} />
                         <h5 style={{ padding: "5px" }}>
                           {user.firstName} {user.lastName}
@@ -300,7 +290,6 @@ const Post = ({ id, question, answers }) => {
                         height: "1px",
                         color: "#989898a3",
                       }}
-                      
                     />
                     <div
                       style={{
@@ -309,11 +298,8 @@ const Post = ({ id, question, answers }) => {
                         letterSpacing: "0.05rem",
                       }}
                       key={index}
-
                     >
-                      <div
-                        style={{ display: "flex", textAlign: "center" }}
-                      >
+                      <div style={{ display: "flex", textAlign: "center" }}>
                         <Avatar src={userAnswer[key].image} />
                         <h5 style={{ padding: "5px" }}>
                           {userAnswer[key].name}
@@ -346,18 +332,13 @@ const Post = ({ id, question, answers }) => {
       <div className="post_footer">
         <div className="post_footerActions">
           <div className="post_footerAction">
-            <div className="upvote">
-              <ThumbUpOutlinedIcon />
-              <small>{123}</small>
-            </div>
-            <div className="downvote">
-              <ThumbDownOutlinedIcon />
-              <small>{10}</small>
-            </div>
+            <button className="post_btnAnswer" onClick={modalOpenClose}>
+              Add Comment
+            </button>
           </div>
           <div className="comment" onClick={() => setShowAnswer(!showAnswer)}>
             <ChatBubbleOutlineOutlinedIcon />
-            <small>Comments</small>
+            <small >Comments</small>
           </div>
           <div className="share">
             <LoopOutlinedIcon />
@@ -379,7 +360,7 @@ const Post = ({ id, question, answers }) => {
                     <div className="options">
                       <FacebookShareButton
                         url={
-                          "https://quora-clone-sanju-manna-2201.netlify.app/"
+                          ""
                         }
                       >
                         <FacebookIcon
@@ -390,7 +371,7 @@ const Post = ({ id, question, answers }) => {
                       </FacebookShareButton>
                       <WhatsappShareButton
                         url={
-                          "https://quora-clone-sanju-manna-2201.netlify.app/"
+                          ""
                         }
                       >
                         <WhatsappIcon
@@ -401,7 +382,7 @@ const Post = ({ id, question, answers }) => {
                       </WhatsappShareButton>
                       <TelegramShareButton
                         url={
-                          "https://quora-clone-sanju-manna-2201.netlify.app/"
+                          ""
                         }
                       >
                         <TelegramIcon
@@ -412,7 +393,7 @@ const Post = ({ id, question, answers }) => {
                       </TelegramShareButton>
                       <WorkplaceShareButton
                         url={
-                          "https://quora-clone-sanju-manna-2201.netlify.app/"
+                          ""
                         }
                       >
                         <WorkplaceIcon
@@ -423,7 +404,7 @@ const Post = ({ id, question, answers }) => {
                       </WorkplaceShareButton>
                       <EmailShareButton
                         url={
-                          "https://quora-clone-sanju-manna-2201.netlify.app/"
+                          ""
                         }
                       >
                         <EmailIcon
@@ -439,9 +420,7 @@ const Post = ({ id, question, answers }) => {
             </span>
           </div>
         </div>
-        <div className="post_more">
-          <MoreHorizOutlinedIcon />
-        </div>
+       
       </div>
     </div>
   );

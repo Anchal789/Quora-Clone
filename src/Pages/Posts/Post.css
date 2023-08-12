@@ -5,20 +5,28 @@
   background-color: white;
   border: 1px solid lightgray;
   border-radius: 5px;
-  margin: auto;
-  margin: 10px;
   width: 40vw;
+  margin: 10px;
 }
-@media screen and (max-width : 791px){
+
+@media screen and (max-width : 1250px) {
   .post{
     width: 100%;
   }
 }
+
+@media screen and (max-width : 791px) {
+  .post {
+    width: 100%;
+    margin: 5px -10px 0px 0px
+  }
+}
+
 .post_info {
   display: flex;
   align-items: center;
   gap: 5px;
-margin: 10px;
+  margin: 10px;
 
 }
 
@@ -26,6 +34,7 @@ margin: 10px;
   margin-left: 10px;
   cursor: pointer;
   font-size: 13px;
+
   &:hover {
     text-decoration: underline;
   }
@@ -57,25 +66,26 @@ margin: 10px;
 }
 
 .post_question p {
-  cursor: pointer;
+  /* cursor: pointer; */
   letter-spacing: 0.05rem;
   word-spacing: 0.2rem;
 
-  &:hover {
-    text-decoration: underline;
-  }
 }
 
 .post_btnAnswer {
-  font-size: 0.7rem;
-  padding: 5px 10px;
-  color: rgb(255, 255, 255);
-  border: 1px solid gray;
+  width: 8rem;
+  font-size: 0.8rem;
+  color: white;
+  text-transform: inherit;
   background-color: #a0201c;
   border-radius: 20px;
+  cursor: pointer;
+  padding: 10px;
+  margin-top: 5px;
 
   &:hover {
-    background-color: #781814;
+    background-color: #6b1b19;
+    box-shadow: 0px 1px 1px 1px gray;
   }
 }
 
@@ -115,10 +125,10 @@ margin: 10px;
 .upvote {
   height: 100%;
   display: flex;
-  gap: 5px;
+  /* gap: 5px; */
   align-items: center;
   padding-right: 5px;
-  padding-left: 20px;
+  /* padding-left: 20px; */
   border: 1px solid gray;
   border-radius: 20px 0 0 20px;
   background-color: rgb(236, 236, 236);
@@ -132,8 +142,8 @@ margin: 10px;
   height: 100%;
   display: flex;
   align-items: center;
-  padding-left: 5px;
-  padding-right: 20px;
+  /* padding-left: 5px; */
+  /* padding-right: 20px; */
   border: 1px solid gray;
   border-radius: 0 20px 20px 0;
   background-color: rgb(236, 236, 236);
@@ -177,21 +187,21 @@ margin: 10px;
 
 
 .ReactModal__Overlay {
-  width: 700;
-  height: 600;
   z-index: 1000;
+  background-color: #323232;
+
 }
 
 .ReactModal__Content {
   min-width: 600px;
   margin: 50px 300px;
+  height: fit-content;
 }
 
 @media only screen and (max-width: 1250px) {
-
-      .ReactModal__Content {
-        margin: 50px 250px;
-      }
+  .ReactModal__Content {
+    margin: 50px 250px;
+  }
 
 }
 
@@ -201,11 +211,6 @@ margin: 10px;
   }
 }
 
-@media only screen and (max-width: 576px) {
-    .ReactModal__Content {
-      margin: 0px;
-    }
-}
 
 .modal__question {
   display: flex;
