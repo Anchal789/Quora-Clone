@@ -300,9 +300,9 @@ const Post = ({ id, question, answers }) => {
                       key={index}
                     >
                       <div style={{ display: "flex", textAlign: "center" }}>
-                        <Avatar src={userAnswer[key].image} />
+                        <Avatar src={loginCred.image} />
                         <h5 style={{ padding: "5px" }}>
-                          {userAnswer[key].name}
+                          {loginCred.name || loginCred.email.split("@")[0]}
                         </h5>
                         {"  "}
                         <small style={{ padding: "5px" }}>

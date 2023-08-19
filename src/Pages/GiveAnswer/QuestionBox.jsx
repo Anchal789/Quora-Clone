@@ -18,6 +18,17 @@ const QuestionBox = ({ props }) => {
     postDate: "",
     postYear: "",
   });
+  const loginCred = JSON.parse(localStorage.getItem("loginCred"));
+
+  const [userAnswer, setUserAnswer] = useState({
+    answer : [],
+    image : loginCred.image,
+    name : loginCred.name,
+    email : loginCred.email
+  })
+
+  const date = new Date();
+
 
   const modalOpenClose = () => {
     setOpenModal(!openModal);
@@ -47,7 +58,7 @@ const QuestionBox = ({ props }) => {
             <p>{props.text}</p>
           </div>
           <div className="answer_length">
-            <p>{props.answers.length} answers</p>
+            <p>{props.answers.length + userAnswer.answer.length} answers</p>
           </div>
           <div>
             <Modal
@@ -75,7 +86,9 @@ const QuestionBox = ({ props }) => {
                 <button
                   type="sumbit"
                   onClick={() => {
-                    props.answers.push(addAnswer);
+                    // props.answers.push(addAnswer);
+                    userAnswer.answer.push(addAnswer);
+                    console.log(userAnswer.answer)
                     setAddAnswer("");
                     setOpenModal(!openModal);
                   }}
@@ -103,41 +116,79 @@ const QuestionBox = ({ props }) => {
                   }}
                 />
                 {props.answers.length > 0 ? (
-                  props.answers.map((answer, index) => (
-                    <div
-                      key={index}
-                      style={{
-                        margin: "10px",
-                        wordSpacing: "0.2rem",
-                        letterSpacing: "0.05rem",
-                      }}
-                    >
+                  <>{
+                    props.answers.map((answer, index) => (
                       <div
-                        style={{ display: "flex", textAlign: "center" }}
                         key={index}
-                      >
-                        <Avatar src={answerUser.userImage} />
-                        <h5 style={{ padding: "5px" }}>
-                          {answerUser.firstName} {answerUser.lastName}
-                        </h5>
-                        {"  "}
-                        <small style={{ padding: "5px" }}>
-                          {answerUser.postYear}
-                        </small>
-                      </div>
-                      <p style={{ margin: "10px 0", textAlign: "start" }}>
-                        {answer}
-                      </p>
-                      <hr
                         style={{
-                          backgroundColor: "#989898a3",
-                          height: "1px",
-                          color: "#989898a3",
                           margin: "10px",
+                          wordSpacing: "0.2rem",
+                          letterSpacing: "0.05rem",
                         }}
-                      />
-                    </div>
-                  ))
+                      >
+                        <div
+                          style={{ display: "flex", textAlign: "center" }}
+                          key={index}
+                        >
+                          <Avatar src={answerUser.userImage} />
+                          <h5 style={{ padding: "5px" }}>
+                            {answerUser.firstName} {answerUser.lastName}
+                          </h5>
+                          {"  "}
+                          <small style={{ padding: "5px" }}>
+                            {answerUser.postYear}
+                          </small>
+                        </div>
+                        <p style={{ margin: "10px 0", textAlign: "start" }}>
+                          {answer}
+                        </p>
+                        <hr
+                          style={{
+                            backgroundColor: "#989898a3",
+                            height: "1px",
+                            color: "#989898a3",
+                            margin: "10px",
+                          }}
+                        />
+                      </div>
+                    ))
+                  }{
+                    userAnswer.answer.map((answer,index)=>(
+                      <div
+                        key={index}
+                        style={{
+                          margin: "10px",
+                          wordSpacing: "0.2rem",
+                          letterSpacing: "0.05rem",
+                        }}
+                      >
+                        <div
+                          style={{ display: "flex", textAlign: "center" }}
+                          key={index}
+                        >
+                          <Avatar src={loginCred.image} />
+                          <h5 style={{ padding: "5px" }}>
+                            {loginCred.email.split("@")[0]}
+                          </h5>
+                          {"  "}
+                          <small style={{ padding: "5px" }}>
+                            {date.getFullYear()}
+                          </small>
+                        </div>
+                        <p style={{ margin: "10px 0", textAlign: "start" }}>
+                          {answer}
+                        </p>
+                        <hr
+                          style={{
+                            backgroundColor: "#989898a3",
+                            height: "1px",
+                            color: "#989898a3",
+                            margin: "10px",
+                          }}
+                        />
+                      </div>
+                    ))
+                  }</>
                 ) : (
                   <div
                     style={{
