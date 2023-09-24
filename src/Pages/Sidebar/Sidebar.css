@@ -1,9 +1,7 @@
 .sidebar {
-  /* flex: ; */
   height: 100%;
   margin-left: 115px;
   margin-right: 10px;
-  /* position: fixed; */
 }
 
 @media only screen and (max-width: 1403px) {

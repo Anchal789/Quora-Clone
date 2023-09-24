@@ -61,4 +61,13 @@
     .menuOption img{
         display: none;
     }
+    /* .sibebarMenu{
+        display: flex;
+        flex-direction: row;
+        padding: 2px;
+        background-color: white;
+    }
+    .menuOption{
+        padding: 0px;
+    } */
 }

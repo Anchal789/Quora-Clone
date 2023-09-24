@@ -148,7 +148,6 @@ input{
 }
 
 .login__auth {
-    display: flex;
     margin-top: 50px;
 }
 
@@ -156,6 +155,7 @@ input{
     margin: 10px;
     display: inline-block;
     width: 240px;
+    text-align: center;
     height: 50px;
     background-color: #4285f4;
     color: #fff;
@@ -213,8 +213,9 @@ input{
     flex: 0.5;
     flex-direction: column;
     padding: 20px;
-    border-right: 1px solid lightgray;
     margin-left: 10px;
+    justify-content: center;
+    align-items: center;
 }
 
 .login__authOption {
