@@ -5,6 +5,8 @@ import "./modal.css";
 import ChatBubbleOutlineOutlinedIcon from "@mui/icons-material/ChatBubbleOutlineOutlined";
 import LoopOutlinedIcon from "@mui/icons-material/LoopOutlined";
 import Modal from "react-modal";
+import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
+import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
 
 import {
   FacebookShareButton,
@@ -64,6 +66,10 @@ const Post = ({ id, question, answers }) => {
       postYear: parseInt(userData.results[0].registered.date.split("-")[0]),
     });
   }
+  const [like, setLike] = useState(false);
+  const handelLike = ()=>{
+    setLike(!like);
+  }
 
   async function randomAnswerUser() {
     const response = await axios.get("https://randomuser.me/api/");
@@ -110,38 +116,42 @@ const Post = ({ id, question, answers }) => {
 
   const handleAddAnswer = async (e) => {
     e.preventDefault();
-    get(
-      child(
-        ref(database),
-        `questionDatabase/questions/${mycontext.questionDatabase}/${
-          id - 1
-        }/useranswers/`
-      )
-    ).then((snapShot) => {
-      setUserlength(Object.keys(snapShot.val()).length);
-      setUserAnswer(snapShot.val());
-    });
-
-    const putData = () => {
-      set(
-        ref(
-          database,
+    if (addAnswer.length > 4) {
+      get(
+        child(
+          ref(database),
           `questionDatabase/questions/${mycontext.questionDatabase}/${
             id - 1
-          }/useranswers/${userLength + 1}`
-        ),
-        {
-          answer: addAnswer,
-          image: loginCred.image,
-          name: loginCred.name,
-          postedDate: `${date.getFullYear()} ${months[date.getMonth()]}`,
-        }
-      );
-      console.log("successfull");
-    };
-    putData();
-    setOpenModal(!openModal);
-    setAddAnswer("")
+          }/useranswers/`
+        )
+      ).then((snapShot) => {
+        setUserlength(Object.keys(snapShot.val()).length);
+        setUserAnswer(snapShot.val());
+      });
+
+      const putData = () => {
+        set(
+          ref(
+            database,
+            `questionDatabase/questions/${mycontext.questionDatabase}/${
+              id - 1
+            }/useranswers/${userLength + 1}`
+          ),
+          {
+            answer: addAnswer,
+            image: loginCred.image,
+            name: loginCred.name,
+            postedDate: `${date.getFullYear()} ${months[date.getMonth()]}`,
+          }
+        );
+        console.log("successfull");
+      };
+      putData();
+      setOpenModal(!openModal);
+      setAddAnswer("");
+    } else {
+      alert("Minimun Length of answer should be 4");
+    }
   };
 
   const modalOpenClose = () => {
@@ -188,7 +198,9 @@ const Post = ({ id, question, answers }) => {
               <textarea
                 value={addAnswer}
                 required
-                onChange={(e) => setAddAnswer(e.target.value)}
+                onChange={(e) => {
+                  setAddAnswer(e.target.value);
+                }}
                 placeholder="Enter Your Comment Here"
                 type="text"
               />
@@ -331,6 +343,9 @@ const Post = ({ id, question, answers }) => {
 
       <div className="post_footer">
         <div className="post_footerActions">
+        <div className="likeBtn">
+            {like ? <FavoriteOutlinedIcon onClick={handelLike} className="like"/> : <FavoriteBorderOutlinedIcon className="unlike" onClick={handelLike}/>}
+          </div>
           <div className="post_footerAction">
             <button className="post_btnAnswer" onClick={modalOpenClose}>
               Add Comment
@@ -338,7 +353,7 @@ const Post = ({ id, question, answers }) => {
           </div>
           <div className="comment" onClick={() => setShowAnswer(!showAnswer)}>
             <ChatBubbleOutlineOutlinedIcon />
-            <small >Comments</small>
+            <small>Comments</small>
           </div>
           <div className="share">
             <LoopOutlinedIcon />
@@ -358,55 +373,35 @@ const Post = ({ id, question, answers }) => {
                     </div>
                     <div className="content">Share ChitChat with friends</div>
                     <div className="options">
-                      <FacebookShareButton
-                        url={
-                          ""
-                        }
-                      >
+                      <FacebookShareButton url={""}>
                         <FacebookIcon
                           logoFillColor="white"
                           round={true}
                           size={50}
                         ></FacebookIcon>
                       </FacebookShareButton>
-                      <WhatsappShareButton
-                        url={
-                          ""
-                        }
-                      >
+                      <WhatsappShareButton url={""}>
                         <WhatsappIcon
                           logoFillColor="white"
                           round={true}
                           size={50}
                         ></WhatsappIcon>
                       </WhatsappShareButton>
-                      <TelegramShareButton
-                        url={
-                          ""
-                        }
-                      >
+                      <TelegramShareButton url={""}>
                         <TelegramIcon
                           logoFillColor="white"
                           round={true}
                           size={50}
                         ></TelegramIcon>
                       </TelegramShareButton>
-                      <WorkplaceShareButton
-                        url={
-                          ""
-                        }
-                      >
+                      <WorkplaceShareButton url={""}>
                         <WorkplaceIcon
                           logoFillColor="white"
                           round={true}
                           size={50}
                         ></WorkplaceIcon>
                       </WorkplaceShareButton>
-                      <EmailShareButton
-                        url={
-                          ""
-                        }
-                      >
+                      <EmailShareButton url={""}>
                         <EmailIcon
                           logoFillColor="white"
                           round={true}
@@ -420,7 +415,6 @@ const Post = ({ id, question, answers }) => {
             </span>
           </div>
         </div>
-       
       </div>
     </div>
   );

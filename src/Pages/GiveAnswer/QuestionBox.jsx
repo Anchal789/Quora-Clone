@@ -88,7 +88,6 @@ const QuestionBox = ({ props }) => {
                   onClick={() => {
                     // props.answers.push(addAnswer);
                     userAnswer.answer.push(addAnswer);
-                    console.log(userAnswer.answer)
                     setAddAnswer("");
                     setOpenModal(!openModal);
                   }}

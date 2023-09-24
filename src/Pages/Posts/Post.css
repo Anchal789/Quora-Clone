@@ -65,6 +65,11 @@
   margin: 10px;
 }
 
+.likeBtn{
+  display: flex;
+  align-items: center;
+}
+
 .post_question p {
   /* cursor: pointer; */
   letter-spacing: 0.05rem;

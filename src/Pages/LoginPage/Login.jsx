@@ -274,7 +274,7 @@ const Login = () => {
                 </div>
               </div>
               <div className="login_buttons">
-                <button onClick={() => setRegisterPage(!registerPage)}>
+                <button onClick={() => {setRegisterPage(!registerPage)}}>
                   Register
                 </button>
                 <button onClick={signInUser}>Login</button>

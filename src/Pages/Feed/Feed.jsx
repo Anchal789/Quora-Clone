@@ -32,7 +32,7 @@ const Feed = () => {
       {/* <QueryBox /> */}
       <div className="marginDiv">
         {mycontext.questionDatabase === "userPost"
-          ? userQuestionList.map((userQuestion, index) =>
+          ? userQuestionList.reverse().map((userQuestion, index) =>
               userQuestion.userQuestion.question === "" ? null : (
                 <UserQuestion
                   key={index}
