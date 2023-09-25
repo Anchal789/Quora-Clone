@@ -1,92 +1,4 @@
-/* * {
-    box-sizing: border-box;
-}
 
-body{
-    margin: 0;
-    font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-    font-size: 1rem;
-}
-
-#container {
-    box-sizing: border-box;
-    background-image: url(//qsf.fs.quoracdn.net/-4-ans_frontend_assets.images.home_page_bg_desktop.png-26-4770753d59b970e1.png);
-    width: 100%;
-    position: absolute;
-    min-height: 100%;
-    background-position: center center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
-#logo {
-    width: 30%;
-    height: 30%;
-}
-
-
-.header{
-    text-align: center;
-}
-
-.mainContainer {
-    position: absolute;
-    background-color: white;
-    margin: auto;
-    border: 1px solid #dee0e1;
-}
-
-.content{
-    display: flex;
-}
-
-.left{
-    width: 50%;
-    padding: 20px;
-    text-align: center;
-}
-
-.left button{
-    color: black;
-}
-
-.right{
-    width: 50%;
-    padding: 3%;
-    box-sizing: border-box;
-}
-
-#loginTitle{
-    font-size: large;
-    font-weight: 500;
-}
-
-label{
-    font-size: large;
-    font-weight: 400;
-}
-
-input{
-    height: 2rem;
-    width: 100%;
-    border: 1px solid #b6b6b6;
-    margin-bottom: 20px;
-    margin-top: 5px;
-}
-
-#loginBtn{
-    margin: 10px;
-    border: none;
-    background-color: rgb(100, 100, 246);
-    color: #fff;
-    padding: 10px;
-    border-radius: 30px;
-    width: 100px;
-} */
 
 @import url("https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap");
 
@@ -96,7 +8,7 @@ input{
     justify-content: center;
     height: 100vh;
     box-sizing: border-box;
-    background-image: url(//qsf.fs.quoracdn.net/-4-ans_frontend_assets.images.home_page_bg_desktop.png-26-4770753d59b970e1.png);
+    background-image: url("../../assets/HomePageBackground.jpg");
     width: 100%;
     position: absolute;
     min-height: 100%;
