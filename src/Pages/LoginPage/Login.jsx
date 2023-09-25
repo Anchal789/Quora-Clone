@@ -1,12 +1,10 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import "./Login.css";
 import { MyContext } from "../../context/Mycontext";
 import { useNavigate } from "react-router";
 import {
   GoogleAuthProvider,
-  createUserWithEmailAndPassword,
   getAuth,
-  signInWithEmailAndPassword,
   signInWithPopup,
 } from "firebase/auth";
 import { app } from "../../assets/firebase";
@@ -42,7 +40,6 @@ const Login = () => {
         );
       })
       .catch((error) => {
-        // setLoginError("Invalid Credentials");
         console.log(error.FirebaseError);
       });
   };
