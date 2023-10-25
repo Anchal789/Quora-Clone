@@ -1,37 +1,58 @@
 *,
 :after,
 :before {
-    border: none;
-    box-sizing: border-box;
-    font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-    margin: 0;
-    outline: 0;
-    padding: 0;
-    text-decoration: none;
-    
-}
-body{
-    background-color: rgb(241, 241, 241);
+  border: none;
+  box-sizing: border-box;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+  text-decoration: none;
 
 }
 
+body {
+  background-color: rgb(241, 241, 241);
+
+}
+
+.smallDevice {
+  display: none;
+}
+
+@media screen and (max-width : 309px) {
+  .smallDevice {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .quora{
+    display: none;
+  }
+}
 
 @media only screen and (max-width: 970px) {
-    .quora {
-      width: fit-content;
-    }
+  .quora {
+    width: fit-content;
   }
+}
+
 @media only screen and (max-width: 576px) {
-    .quora {
-      width: fit-content;
-    }
+  .quora {
+    width: fit-content;
   }
 
+  .quora .quora_content {
+    grid-template-columns: none !important;
+  }
+}
+
 .quora .quora_content {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    gap: 10px;
-    position: relative;
-    background-color: rgb(241, 241, 241);
-    margin: auto;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 10px;
+  position: relative;
+  background-color: rgb(241, 241, 241);
+  margin: auto;
 }

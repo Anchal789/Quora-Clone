@@ -19,6 +19,17 @@
     }
 }
 
+@media screen and (max-width : 576px) {
+    .headingDiv {
+        margin: 10px 0 10px 0;
+        width: 100vw !important;
+    }
+
+    .question_post{
+        width: 100vw !important;
+    }
+}
+
 .answer_length {
     justify-content: space-between;
     align-items: center;
@@ -26,7 +37,7 @@
     margin: 10px;
 }
 
-.question_post{
+.post .question_post{
     width: 40rem !important;
     max-width: 40rem;
 }

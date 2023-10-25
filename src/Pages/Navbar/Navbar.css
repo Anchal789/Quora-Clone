@@ -116,8 +116,6 @@
 
 
 .ReactModal__Overlay {
-    width: 700;
-    height: 600;
     z-index: 1000;
     backdrop-filter: blur(10px);
 }
@@ -127,7 +125,6 @@
 }
 
 .ReactModal__Content {
-    min-width: 600px;
     margin: 50px 300px;
     box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.1);
 }
@@ -259,7 +256,14 @@
     left: 62.5px !important;
 }
 
+.navbar_avatar_shown_on_small, .add_button_shown_on_small{
+    display: none;
+    margin-left: 10px;
+}
 
+.downbar{
+    display: none;
+}
 
 @media only screen and (max-width: 1250px) {
 
@@ -286,14 +290,43 @@
 @media screen and (max-width: 576px) {
 
     .ReactModal__Content {
-        margin: -17px !important;
+        margin: -30px !important;
         top: 30% !important;
+        width: 300px !important;
     }
+    .navbar_right{
+        display: none;
+    }
+
+    .navbar_avatar_shown_on_small,.add_button_shown_on_small{
+        display: block;
+    }
+
+    .add_button_shown_on_small{
+        font-size: x-small;
+        padding: 5px !important;
+        border-radius: 5%;
+        background-color: gray;
+    }
+
+    .downbar{
+        display: flex;
+        margin: 5px;
+        justify-content: space-around;
+        background-color: white;
+        padding: 5px;
+    }
+
+    .name_of_user{
+        display: none;
+    }
+    
 }
 
 @media screen and (max-width : 1403px) {
     .navbar {
         display: flex;
+        width: 100vw;
     }
 }
 
@@ -308,6 +341,7 @@
     .navbar {
         justify-content: flex-start;
         padding: 5px 0;
+        width: 100vw;
     }
 
     .navbar_middle_icon{
@@ -322,7 +356,24 @@
         margin: 10px;
     }
 
-    .ant-popover{
+    .modal_title{
+        width: min-content;
+    }
+
+    .navbar_middle .MuiSvgIcon-root{
+        margin: 0;
+        width: 30px;
+    }
+
+    .MuiAvatar-root{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 30px !important;
+        height: 30px !important;
+    }
+
+    .share{
         display: none;
     }
 

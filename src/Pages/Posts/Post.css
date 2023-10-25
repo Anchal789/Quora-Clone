@@ -10,7 +10,7 @@
 }
 
 @media screen and (max-width : 1250px) {
-  .post{
+  .post {
     width: 100%;
   }
 }
@@ -65,7 +65,7 @@
   margin: 10px;
 }
 
-.likeBtn{
+.likeBtn {
   display: flex;
   align-items: center;
 }
@@ -198,7 +198,6 @@
 }
 
 .ReactModal__Content {
-  min-width: 600px;
   margin: 50px 300px;
   height: fit-content;
 }
@@ -213,6 +212,17 @@
 @media only screen and (max-width: 1000px) {
   .ReactModal__Content {
     margin: 50px 100px;
+  }
+}
+
+@media screen and (max-width : 576px) {
+  .post {
+    width: 98vw;
+    padding: 0px;
+  }
+
+  .share {
+    display: none;
   }
 }
 

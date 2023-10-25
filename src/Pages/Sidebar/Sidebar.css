@@ -6,6 +6,10 @@
   /* position: fixed; */
 }
 
+.sibebarMenuSmallScreen {
+  display: none;
+}
+
 @media only screen and (max-width: 1403px) {
   .sidebar {
     margin-left: 50px;
@@ -21,7 +25,42 @@
 
 @media only screen and (max-width: 576px) {
   .sidebar {
+    display: none;
     position: static;
     margin-right: 0;
   }
+
+  .sibebarMenuSmallScreen {
+    display: block;
+    top: 90%;
+    right: 0;
+    position: fixed;
+    text-align: center;
+  }
+
+  .sibebarMenuSmallScreen select {
+    width: 70px;
+    -webkit-appearance: none;
+    background-color: #1c4aa0;
+    color: white;
+    padding: 4px;
+    line-height: 21px;
+    border-radius: 50%;
+    text-align: center;
+    height: 70px;
+  }
+
+  /* .sibebarMenuSmallScreen {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: white;
+    padding: 3px;
+    margin: 0 5px 0 5px;
+  }
+
+  .sibebarMenuSmallScreen select {
+    border: 1px solid #a0201c;
+    background-color: aqua;
+  } */
+
 }

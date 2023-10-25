@@ -3,16 +3,11 @@ import React, { useContext } from "react";
 import "./SidebarMenu.css";
 // import AddIcon from "@mui/icons-material/Add";
 import { MyContext } from "../../context/Mycontext";
-import { Helmet } from "react-helmet";
 
 const SidebarMenu = () => {
   const mycontext = useContext(MyContext);
   return (
     <div className="sibebarMenu">
-      <Helmet>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </Helmet>
-
       <div
         className="menuOption"
         onClick={() => {
@@ -42,7 +37,7 @@ const SidebarMenu = () => {
       <div
         className="menuOption"
         onClick={() => {
-          mycontext.setAnotherFeed("false")
+          mycontext.setAnotherFeed("false");
           mycontext.setQuestionDatabase("business");
           mycontext.setFollowing("");
         }}

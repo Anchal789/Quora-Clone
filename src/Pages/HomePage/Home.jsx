@@ -13,15 +13,18 @@ const Home = () => {
   const mycontext = useContext(MyContext);
 
   return (
-    <div className="quora">
-      <Navbar />
-      <div className="quora_content">
-        <Sidebar />
-        {mycontext.anotherFeed === "true" ? <AnotherFeed /> : <Feed />}
-        {/* <Feed /> */}
-        <Widgets />
+    <>
+    <div className="smallDevice">The device is too small</div>
+      <div className="quora">
+        <Navbar />
+        <div className="quora_content">
+          <Sidebar />
+          {mycontext.anotherFeed === "true" ? <AnotherFeed /> : <Feed />}
+          {/* <Feed /> */}
+          <Widgets />
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

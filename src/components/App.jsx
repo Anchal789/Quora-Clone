@@ -6,6 +6,7 @@ import Home from "../Pages/HomePage/Home";
 import Login from "../Pages/LoginPage/Login";
 import Register from "../Pages/RegisterPage/Register";
 import MycontextProvider from "../context/Mycontext";
+import "../styles/App.css"
 
 const App = () => {
   const clientId =
